@@ -1,10 +1,12 @@
 node {
-    stage('build and run') {
+    stage('clone') {
     git 'https://github.com/younesAmin/hello-world_java.git'
-    sh '''
-        javac main.java
-        java main
-    '''
-}
+    }
+    stage('build') {
+    sh 'javac main.java'
+    }
+    stage('run') {
+    sh 'java main'
+    }
 }
 
